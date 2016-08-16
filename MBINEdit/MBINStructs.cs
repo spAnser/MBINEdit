@@ -564,15 +564,48 @@ namespace MBINEdit
     public class cGcWaterGlobals
     {
         [MarshalAs(UnmanagedType.I1)]
-        bool Unknown0;
+        public bool Unknown0;
     }
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
     public class cGcAtlasGlobals
     {
-        int Unknown0;
-        int ResolveTimeout;
-        int ConnectTimeout;
-        int SendRecvTimeout;
+        public int Unknown0;
+        public int ResolveTimeout;
+        public int ConnectTimeout;
+        public int SendRecvTimeout;
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
+    public class cGcBootLogoData
+    {
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x100)]
+        public string Texture1;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x100)]
+        public string Texture2;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x100)]
+        public string Texture3;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x100)]
+        public string Texture4;
+        public float DisplayTime1;
+        public float DisplayTime2;
+        public float DisplayTime3;
+        public float DisplayTime4;
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
+    public class cGcHUDComponent
+    {
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 0x10)]
+        public string ID;
+        public int PosX;
+        public int PosY;
+        public int Width;
+        public int Height;
+        public int Align;
+        public string[] AlignValues()
+        {
+            return new string[] { "Center", "TopLeft", "TopRight", "BottomLeft", "BottomRight" };
+        }
     }
 }

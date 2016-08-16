@@ -55,6 +55,10 @@ namespace MBINEdit
                     return _io.Reader.ReadStruct<cGcWaterGlobals>();
                 case "cGcAtlasGlobals":
                     return _io.Reader.ReadStruct<cGcAtlasGlobals>();
+                case "cGcBootLogoData":
+                    return _io.Reader.ReadStruct<cGcBootLogoData>();
+                case "cGcHUDComponent": // don't think any MBIN files use this template as the base template, but templates do use it in lists (which aren't deserialized by MBINEdit... yet...)
+                    return _io.Reader.ReadStruct<cGcHUDComponent>();
             }
 
             return null; // struct/template not mapped yet
@@ -88,6 +92,12 @@ namespace MBINEdit
                     break;
                 case "cGcAtlasGlobals":
                     _io.Writer.WriteStruct((cGcAtlasGlobals)obj);
+                    break;
+                case "cGcBootLogoData":
+                    _io.Writer.WriteStruct((cGcBootLogoData)obj);
+                    break;
+                case "cGcHUDComponent":
+                    _io.Writer.WriteStruct((cGcHUDComponent)obj);
                     break;
             }
         }
