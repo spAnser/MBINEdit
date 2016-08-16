@@ -49,6 +49,8 @@ namespace MBINEdit
                     return _io.Reader.ReadStruct<cGcUserSettingsData>();
                 case "cTkGraphicsSettings":
                     return _io.Reader.ReadStruct<cTkGraphicsSettings>();
+                case "cTkEngineSettingsMapping":
+                    return _io.Reader.ReadStruct<cTkEngineSettingsMapping>();
             }
 
             return null; // struct/template not mapped yet
@@ -73,6 +75,9 @@ namespace MBINEdit
                     break;
                 case "cTkGraphicsSettings":
                     _io.Writer.WriteStruct((cTkGraphicsSettings)obj);
+                    break;
+                case "cTkEngineSettingsMapping":
+                    _io.Writer.WriteStruct((cTkEngineSettingsMapping)obj);
                     break;
             }
         }

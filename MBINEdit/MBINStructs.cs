@@ -505,4 +505,59 @@ namespace MBINEdit
         /* 0x41 */ public char[] Padding41;
         /* 0x44 = END */
     }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
+    public class cTkEngineSettingsMapping
+    {
+        public float ShadowMultiplierLow;
+        public float ShadowMultiplierNormal;
+        public float ShadowMultiplierHigh;
+        public float ShadowMultiplierUltra;
+        public float ReflectionMultiplierLow;
+        public float ReflectionMultiplierNormal;
+        public float ReflectionMultiplierHigh;
+
+        /* unsure what these mean, all are labelled "NeedsGameRestart", first one is checked and if true another 0x13 are read? */
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart1;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart2;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart3;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart4;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart5;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart6;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart7;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart8;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart9;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart10;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart11;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart12;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart13;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart14;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart15;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart16;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart17;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart18;
+        [MarshalAs(UnmanagedType.I1)]
+        public bool NeedsGameRestart19;
+
+    }
 }
