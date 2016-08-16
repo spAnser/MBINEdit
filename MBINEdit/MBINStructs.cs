@@ -558,6 +558,21 @@ namespace MBINEdit
         public bool NeedsGameRestart18;
         [MarshalAs(UnmanagedType.I1)]
         public bool NeedsGameRestart19;
+    }
 
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
+    public class cGcWaterGlobals
+    {
+        [MarshalAs(UnmanagedType.I1)]
+        bool Unknown0;
+    }
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
+    public class cGcAtlasGlobals
+    {
+        int Unknown0;
+        int ResolveTimeout;
+        int ConnectTimeout;
+        int SendRecvTimeout;
     }
 }

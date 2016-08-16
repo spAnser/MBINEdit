@@ -51,6 +51,10 @@ namespace MBINEdit
                     return _io.Reader.ReadStruct<cTkGraphicsSettings>();
                 case "cTkEngineSettingsMapping":
                     return _io.Reader.ReadStruct<cTkEngineSettingsMapping>();
+                case "cGcWaterGlobals":
+                    return _io.Reader.ReadStruct<cGcWaterGlobals>();
+                case "cGcAtlasGlobals":
+                    return _io.Reader.ReadStruct<cGcAtlasGlobals>();
             }
 
             return null; // struct/template not mapped yet
@@ -78,6 +82,12 @@ namespace MBINEdit
                     break;
                 case "cTkEngineSettingsMapping":
                     _io.Writer.WriteStruct((cTkEngineSettingsMapping)obj);
+                    break;
+                case "cGcWaterGlobals":
+                    _io.Writer.WriteStruct((cGcWaterGlobals)obj);
+                    break;
+                case "cGcAtlasGlobals":
+                    _io.Writer.WriteStruct((cGcAtlasGlobals)obj);
                     break;
             }
         }
